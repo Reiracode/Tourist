@@ -1,0 +1,12 @@
+class1
+0: undefined
+1: "遊憩類"tourist
+2: "其他"other
+3: "自然風景類"natural
+4: "都會公園類"city
+5: "觀光工廠類"factory
+6: "藝術類"art
+
+class2
+(4) ['遊憩類', undefined, '都會公園類', '體育健身類']
+
