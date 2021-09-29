@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.css">
+    </link>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.Default.css">
+    </link>
+    <link rel="stylesheet" href="./main.css">
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        border: none;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        text-decoration: none;
+        outline: none;
+        list-style: none;
+        font-family: Arial, "Noto Sans TC", "Microsoft JhengHei";
+      }
+
+      html,
+      body {
+        width: 100vw;
+        height: 100vh;
+        height: calc(var(--vh, 1vh) * 100);
+        overflow: hidden;
+      }
+
+      .main {
+        height: 60vh;
+      }
+
+      .content {
+        margin: 10px;
+      }
+
+      a {
+        color: unset;
+        display: block;
+      }
+
+      a:hover {
+        transition: 0.3s ease-in;
+      }
+
+      .wall {
+        background: plum;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: center / cover no-repeat url("./img/natural.jpeg ");
+      }
+
+      .search-box {
+        position: absolute;
+        z-index: 999;
+        margin-left: 50px;
+        width: 100%;
+      }
+
+      .fas {
+        position: absolute;
+        left: 10px;
+        top: 50%;
+      }
+
+      .navlink {
+        display: flex;
+        overflow-x: auto;
+        /* flex-wrap: wrap; */
+      }
+
+      .navlink li {
+        /* width: calc(50% - 20px);
+        margin: 10px; */
+        flex: 0 1 calc(20% - 10px);
+        margin: 5px;
+        min-width: 110px;
+      }
+
+      .navlink a {
+        display: block;
+        position: relative;
+        border: 1px solid pink;
+        height: 100px;
+      }
+
+      .navlink p {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        font-size: 1.6rem;
+      }
+
+      .navlink img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        filter: brightness(0.9);
+      }
+
+      input {
+        border-radius: 20px;
+        border: 1px solid lightgray;
+        font-size: 18px;
+        color: #8d8d8d;
+        text-indent: 50px;
+        padding: 10px;
+        width: 80%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div id="maskmap"></div>
+      <div class="search-box">
+        <input type="text" placeholder="search spots" id="findspots" />
+        <i class="fas fa-search"></i>
+      </div>
+    </div>
+
+
+    <div class="content">
+      <!-- <div class="wall"> -->
+      <!-- <div class="search-box">
+        <input type="text" placeholder="search spots" id="findspots" />
+        <i class="fas fa-search"></i>
+      </div> -->
+      <!-- </div> -->
+
+      <ul class="navlink">
+        <li>
+          <a href="#"><img
+                 src="https://images.unsplash.com/photo-1570585703502-1375b93e7a97?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHBsYXl8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+                 alt="" />
+            <p>遊憩</p>
+          </a>
+        </li>
+        <li>
+          <a href="#"><img
+                 src="https://images.unsplash.com/photo-1573110713733-c2aa27cc1c80?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8dGFpcGVpfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+                 alt="" />
+            <p>其他</p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img
+                 src="https://images.unsplash.com/photo-1624650737915-bd0c4031af80?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fHRhaXdhbnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+                 alt="" />
+            <p>自然風景</p>
+          </a>
+        </li>
+        <li>
+          <a href="#"><img src="./img/city2.jpeg" alt="" />
+            <p>都會公園</p>
+          </a>
+        </li>
+        <li>
+          <a href="#"><img src="./img/factory.jpeg" alt="" />
+            <p>觀光工廠</p>
+          </a>
+        </li>
+        <li>
+          <a href="#"><img
+                 src="https://images.unsplash.com/photo-1627485314228-16865a0194e1?ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MTE1fHx8ZW58MHx8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+                 alt="" />
+            <p>藝術</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/leaflet.markercluster.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tw-city-selector@2.1.0/dist/tw-city-selector.min.js"></script>
+    <script src="./all2.js"></script>
+
+  </body>
+</html>
