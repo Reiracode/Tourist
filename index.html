@@ -42,7 +42,24 @@
     </div>
 
 </div>
+<div class="main">
+    <div id="maskmap"></div>
+    <div class="search-box">
+        <input type="text" placeholder="search spots" id="findspots" />
+        <i class="fas fa-search searching"></i>
+    </div>
 
+    <div class="overlay active">
+        <div class="datalist"  id="storelist"></div>     
+        <i class="far fa-list-alt circle_btn"></i>
+    </div>
+
+    <div class="side_info">
+        <div class="close_overlay">X</div>
+        <div id="test" class="side_detail"></div>
+    </div>
+
+</div>
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/leaflet.markercluster.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/tw-city-selector@2.1.0/dist/tw-city-selector.min.js"></script>
