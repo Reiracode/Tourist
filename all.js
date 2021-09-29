@@ -6,8 +6,6 @@ const api =
 // 25.0224296 121.4994827
 // const api =
 //   "https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot/Taipei?$top=1000&$spatialFilter=nearby(25.0224296%2C121.4994827%2C30000000)&$format=JSON";
-// const api =
-//   "https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot/Chiayi?$top=1000&$format=JSON";
 const jpg =
   "https://images.unsplash.com/photo-1550760146-f2f4cf8961f1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80";
 let mymarker,
