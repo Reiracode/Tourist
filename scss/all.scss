@@ -17,7 +17,7 @@
   outline: none;
   list-style: none;
   font-family: "Noto Sans TC", sans-serif;
-  font-weight: 500; 
+  font-weight: 500;
 }
 
 html,
@@ -114,28 +114,27 @@ a {
 }
 
 .detail_body {
-  margin: 20px 40px ;
-  > *{
-    margin:20px 0;
+  margin: 20px 40px;
+  > * {
+    margin: 20px 0;
   }
 }
 
-
 .hook {
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-    transition: all linear 250ms;
-    // border: 10px solid pink;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  transition: all linear 250ms;
+  // border: 10px solid pink;
 }
 .hook p {
-    transition: all linear 500ms;
-    height: auto;
-    object-position: top;
+  transition: all linear 500ms;
+  height: auto;
+  object-position: top;
 }
 .hook.open p {
-    transition: all linear 500ms;
-    transform: translateY(calc(-100% + 100px));
+  transition: all linear 500ms;
+  transform: translateY(calc(-100% + 100px));
 }
 
 .datalist {
@@ -146,10 +145,9 @@ a {
 
 .spot_title {
   position: relative;
-  a{
-     color: #a4b2b7;
+  a {
+    color: #a4b2b7;
   }
-     
 }
 
 .spot_title span {
@@ -218,21 +216,20 @@ button.active {
   position: absolute;
   bottom: 0px;
   display: flex;
-  .fas{
+  .fas {
     z-index: 999;
   }
- 
 }
-.circle_btn{
-    z-index: 9999;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    border-radius: 100%;
-    background-color: rgb(238, 237, 237);
+.circle_btn {
+  z-index: 9999;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background-color: rgb(238, 237, 237);
 }
 
 .close_overlay {
@@ -253,12 +250,11 @@ button.active {
   z-index: 1;
 }
 
-
 .close_overlay svg {
   pointer-events: none;
 }
 
-.view_all>i{
+.view_all > i {
   pointer-events: none;
 }
 
@@ -328,37 +324,38 @@ button.active {
   line-height: 120px;
 }
 .search-box {
-    position: fixed;
-    z-index: 999;
-    margin-left: 50px;
-    width: 100%;
+  position: fixed;
+  z-index: 999;
+  margin-left: 50px;
+  width: 100%;
 }
-.searching{
+.searching {
   position: absolute;
-  left:20px;
-  top:15px;
+  left: 20px;
+  top: 15px;
 }
-input {
-    // border-radius: 100%;
-    clip-path:circle(40%);
-    border: 1px solid lightgray;
-    font-size: 18px;
-    color: #8d8d8d;
-    text-indent: 50px;
-    padding: 10px; 
-    width: 50px;
-    height: 50px;
-    // transition: border-radius .1s,width .5s .2s;
+input#findspots {
+  border-radius: 150%;
+  border: 1px solid lightgray;
+  font-size: 18px;
+  color: #8d8d8d;
+  text-indent: 50px;
+  padding: 10px;
+  width: 50px;
+  height: 50px;
+  transition: width 0.4s ease-in-out, border-radius 0.8s ease-in-out;
 }
-input:hover,input:active{
-clip-path: inset(0 0 75% 0);
+input#findspots:hover,input#findspots.click{
+  border-radius: 0;
+  width: 400px;
+  transition: width 0.8s ease-in-out, border-radius 0.4s ease-in-out;
 }
 
-[class*="twicon-"],
-[class^="twicon-"] {
-  font-size: 60px;
-  color: palevioletred;
-}
+// [class*="twicon-"],
+// [class^="twicon-"] {
+//   font-size: 60px;
+//   color: palevioletred;
+// }
 
 .leaflet-container a.leaflet-popup-close-button {
   width: 28px !important;
@@ -386,12 +383,11 @@ clip-path: inset(0 0 75% 0);
   font-size: 1em;
 }
 
-.leaflet-interactive {
-  stroke: honeydew;
-  -webkit-text-stroke: honeydew;
-  fill: white;
-}
-
+// .leaflet-interactive {
+//   stroke: honeydew;
+//   -webkit-text-stroke: honeydew;
+//   fill: white;
+// }
 
 .leaflet-popup-close-button {
   display: none;
@@ -440,4 +436,20 @@ clip-path: inset(0 0 75% 0);
 
 .marker-cluster span {
   line-height: 30px;
+}
+
+
+.divicon {
+    display: table-cell;
+    color: #f00;
+    background-color: #ff4;
+    opacity: 0.7;
+    white-space: nowrap;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+[class*=" twicon-"], [class^="twicon-"] {
+    font-size: 36px;
+    color:#5d7dd1;
 }

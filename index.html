@@ -1,70 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-<meta content='developer' name='reiracode' />
-<link rel="icon" href="./icon/favico.png" type="image/png" />
-<title>Mask Finder</title>
-<meta name="description" content="Mask-Finder Instant Mask Map in Taiwan">
-<link rel="stylesheet" href="./twicon.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
-<link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.css"></link> 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.Default.css"></link>
-<link rel="stylesheet" href="./css/all.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta content='developer' name='reiracode' />
+    <link rel="icon" href="./icon/favico.png" type="image/png" />
+    <title>Mask Finder</title>
+    <meta name="description" content="Mask-Finder Instant Mask Map in Taiwan">
+    <link rel="stylesheet" href="./twicon.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.css">
+    </link>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.Default.css">
+    </link>
+    <link rel="stylesheet" href="./css/all.css">
 
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
-<script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+    <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css" /> -->
+ 
+<style>
+
+ 
+
+</style>
 </head>
+
 <body>
-<div id="loading"><div class="loader"></div></div>
-<h1 class="logo texthide">
-    <a href="./index.html">Mask Finder</a>
-</h1>
-
-<div class="main">
-    <div id="maskmap"></div>
-    <div class="search-box">
-        <input type="text" placeholder="search spots" id="findspots" />
-        <i class="fas fa-search searching"></i>
+    <div id="loading">
+        <div class="loader"></div>
     </div>
+    <h1 class="logo texthide">
+        <a href="./index.html">Mask Finder</a>
+    </h1>
 
-    <div class="overlay active">
-        <div class="datalist"  id="storelist"></div>     
-        <i class="far fa-list-alt circle_btn"></i>
+
+    <div class="main">
+        <div id="maskmap"></div>
+        <div class="search-box">
+            <input type="text" id="findspots" />
+            <i class="fas fa-search searching"></i>
+        </div>
+
+        <div class="overlay active">
+            <div class="datalist" id="storelist"></div>
+            <i class="far fa-list-alt circle_btn"></i>
+        </div>
+
+        <div class="side_info">
+            <div class="close_overlay">X</div>
+            <div id="test" class="side_detail"></div>
+        </div>
+
     </div>
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/leaflet.markercluster.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tw-city-selector@2.1.0/dist/tw-city-selector.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsSHA/3.2.0/sha.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet.polyline.snakeanim@0.2.0/L.Polyline.SnakeAnim.min.js"></script>
 
-    <div class="side_info">
-        <div class="close_overlay">X</div>
-        <div id="test" class="side_detail"></div>
-    </div>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.AnimatedMarker/1.0.0/AnimatedMarker.min.js"></script> -->
 
-</div>
-<div class="main">
-    <div id="maskmap"></div>
-    <div class="search-box">
-        <input type="text" placeholder="search spots" id="findspots" />
-        <i class="fas fa-search searching"></i>
-    </div>
 
-    <div class="overlay active">
-        <div class="datalist"  id="storelist"></div>     
-        <i class="far fa-list-alt circle_btn"></i>
-    </div>
-
-    <div class="side_info">
-        <div class="close_overlay">X</div>
-        <div id="test" class="side_detail"></div>
-    </div>
-
-</div>
-<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/leaflet.markercluster.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/tw-city-selector@2.1.0/dist/tw-city-selector.min.js"></script>
-<script src="./all.js"></script>
-
+    <script src="./all.js"></script>
+  
+          
 
 </body>
+
 </html>

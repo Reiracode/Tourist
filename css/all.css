@@ -368,9 +368,8 @@ button.active {
   top: 15px;
 }
 
-input {
-  -webkit-clip-path: circle(40%);
-          clip-path: circle(40%);
+input#findspots {
+  border-radius: 150%;
   border: 1px solid lightgray;
   font-size: 18px;
   color: #8d8d8d;
@@ -378,17 +377,15 @@ input {
   padding: 10px;
   width: 50px;
   height: 50px;
+  -webkit-transition: width 0.4s ease-in-out, border-radius 0.8s ease-in-out;
+  transition: width 0.4s ease-in-out, border-radius 0.8s ease-in-out;
 }
 
-input:hover, input:active {
-  -webkit-clip-path: inset(0 0 75% 0);
-          clip-path: inset(0 0 75% 0);
-}
-
-[class*="twicon-"],
-[class^="twicon-"] {
-  font-size: 60px;
-  color: palevioletred;
+input#findspots:hover, input#findspots.click {
+  border-radius: 0;
+  width: 400px;
+  -webkit-transition: width 0.8s ease-in-out, border-radius 0.4s ease-in-out;
+  transition: width 0.8s ease-in-out, border-radius 0.4s ease-in-out;
 }
 
 .leaflet-container a.leaflet-popup-close-button {
@@ -414,12 +411,6 @@ input:hover, input:active {
   text-align: center;
   margin-right: 5px;
   font-size: 1em;
-}
-
-.leaflet-interactive {
-  stroke: honeydew;
-  -webkit-text-stroke: honeydew;
-  fill: white;
 }
 
 .leaflet-popup-close-button {
@@ -469,5 +460,20 @@ input:hover, input:active {
 
 .marker-cluster span {
   line-height: 30px;
+}
+
+.divicon {
+  display: table-cell;
+  color: #f00;
+  background-color: #ff4;
+  opacity: 0.7;
+  white-space: nowrap;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+[class*=" twicon-"], [class^="twicon-"] {
+  font-size: 36px;
+  color: #5d7dd1;
 }
 /*# sourceMappingURL=all.css.map */
